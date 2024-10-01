@@ -224,9 +224,11 @@ section {
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
+  padding: 1rem 1.5rem; /* Adjusted padding for a better fit */
+  width: auto; /* Automatically adjust to the text length */
   border-radius: 2rem;
+  text-align: center; /* Ensure the text is centered */
+  display: inline-block; /* Makes the button inline-block to fit text */
 }
 
 .btn-color-1,
