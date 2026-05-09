@@ -29,9 +29,9 @@
   --card-color: #ffffff;
   --border-color: #e2e8f0;
 
-  --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.12);
 
   --radius-sm: 1rem;
   --radius-md: 1.5rem;
@@ -44,7 +44,9 @@
    GLOBAL
 ========================================= */
 
-html {
+html,
+body {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -53,7 +55,7 @@ body {
   background: var(--background-color);
   color: var(--primary-color);
   line-height: 1.7;
-  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 section {
@@ -124,7 +126,6 @@ nav {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--primary-color);
 }
 
 .nav-links {
@@ -300,11 +301,13 @@ nav {
 
   border-radius: 50%;
 
-  border: 5px solid rgba(255, 255, 255, 0.9);
+  border: 5px solid rgba(255, 255, 255, 0.95);
 
   box-shadow: var(--shadow-lg);
 
   transition: transform 0.4s ease;
+
+  will-change: transform;
 }
 
 .section__pic-container img:hover {
@@ -339,11 +342,11 @@ nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
-
   flex-wrap: wrap;
 }
 
 .btn {
+  min-height: 50px;
   padding: 1rem 2rem;
 
   border: none;
@@ -449,7 +452,6 @@ nav {
 .about-text {
   max-width: 900px;
   margin: 4rem auto 0;
-
   text-align: center;
 }
 
@@ -476,7 +478,9 @@ nav {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(340px, 100%), 1fr));
 
   gap: 2rem;
   margin-top: 4rem;
@@ -484,8 +488,11 @@ nav {
 
 .project-card {
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
+
+  height: 100%;
 }
 
 .project-img {
@@ -496,6 +503,8 @@ nav {
   object-position: top;
 
   transition: transform 0.4s ease;
+
+  will-change: transform;
 }
 
 .project-card:hover .project-img {
@@ -525,12 +534,14 @@ nav {
   margin-bottom: 1rem;
 
   line-height: 1.8;
+
+  transition: all 0.3s ease;
 }
 
 .project-description.collapsed {
   display: -webkit-box;
 
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 
   overflow: hidden;
@@ -682,12 +693,11 @@ nav {
 
 footer {
   padding: 2rem;
+  margin-top: 4rem;
 
   text-align: center;
 
   background: white;
-
-  margin-top: 4rem;
 }
 
 /* =========================================
@@ -740,7 +750,8 @@ footer {
   }
 
   .skills-container {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns:
+      repeat(auto-fit, minmax(170px, 1fr));
   }
 
   .project-buttons,
@@ -754,6 +765,10 @@ footer {
 
   .section__pic-container {
     width: min(280px, 85vw);
+  }
+
+  .project-buttons {
+    width: 100%;
   }
 }
 
@@ -793,6 +808,10 @@ footer {
 
   .contact-card {
     width: 100%;
+    justify-content: center;
+  }
+
+  .project-tools {
     justify-content: center;
   }
 }

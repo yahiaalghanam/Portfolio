@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
   descriptions.forEach((desc) => {
     const fullText = desc.textContent.trim();
 
-    // Only apply if text is longer than 200 chars
-    if (fullText.length > 200) {
+    // Only apply if text is longer than 150 chars
+    if (fullText.length > 150) {
       desc.classList.add("collapsed");
 
       const button = document.createElement("button");
