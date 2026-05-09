@@ -37,7 +37,7 @@
   --radius-md: 1.5rem;
   --radius-lg: 2rem;
 
-  --transition: 0.3s ease;
+  --transition: all 0.3s ease;
 }
 
 /* =========================================
@@ -62,7 +62,7 @@ section {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 a {
@@ -99,29 +99,32 @@ p {
 ========================================= */
 
 nav {
-  width: 100%;
-  height: 85px;
-  padding: 0 10%;
-
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+
+  width: 100%;
+  height: 85px;
+
+  padding: 0 10%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  z-index: 1000;
   box-shadow: var(--shadow-sm);
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -135,12 +138,14 @@ nav {
   transition: var(--transition);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--accent-color);
 }
 
 .nav-links a::after {
   content: "";
+
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -149,10 +154,12 @@ nav {
   height: 2px;
 
   background: var(--accent-color);
+
   transition: var(--transition);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
 }
 
@@ -182,41 +189,11 @@ nav {
 .hamburger-icon span {
   width: 100%;
   height: 3px;
+
   border-radius: 999px;
   background: var(--primary-color);
-  transition: var(--transition);
-}
-
-.menu-links {
-  position: absolute;
-  top: 50px;
-  right: 0;
-
-  width: 220px;
-  overflow: hidden;
-
-  max-height: 0;
-
-  background: white;
-  border-radius: var(--radius-md);
-
-  box-shadow: var(--shadow-md);
 
   transition: var(--transition);
-}
-
-.menu-links a {
-  display: block;
-  padding: 1rem;
-  text-align: center;
-}
-
-.menu-links a:hover {
-  background: #f1f5f9;
-}
-
-.menu-links.open {
-  max-height: 400px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -229,6 +206,41 @@ nav {
 
 .hamburger-icon.open span:last-child {
   transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.menu-links {
+  position: absolute;
+  top: 50px;
+  right: 0;
+
+  width: 230px;
+
+  overflow: hidden;
+  max-height: 0;
+
+  background: white;
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--transition);
+}
+
+.menu-links.open {
+  max-height: 400px;
+}
+
+.menu-links a {
+  display: block;
+  padding: 1rem;
+
+  text-align: center;
+  transition: var(--transition);
+}
+
+.menu-links a:hover {
+  background: #f1f5f9;
 }
 
 /* =========================================
@@ -252,17 +264,19 @@ nav {
 ========================================= */
 
 .section__pic-container {
+  position: relative;
+
   width: min(420px, 90vw);
   aspect-ratio: 1 / 1;
 
-  position: relative;
   flex-shrink: 0;
 }
 
 .section__pic-container::before {
   content: "";
+
   position: absolute;
-  inset: -10px;
+  inset: -12px;
 
   border-radius: 50%;
 
@@ -272,9 +286,9 @@ nav {
     rgba(15, 23, 42, 0.2)
   );
 
-  z-index: -1;
+  filter: blur(25px);
 
-  filter: blur(20px);
+  z-index: -1;
 }
 
 .section__pic-container img {
@@ -313,7 +327,7 @@ nav {
 }
 
 .section__text__p2 {
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   margin-bottom: 1.5rem;
 }
 
@@ -325,6 +339,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
+
   flex-wrap: wrap;
 }
 
@@ -358,6 +373,7 @@ nav {
 .btn-color-2 {
   background: white;
   color: var(--primary-color);
+
   border: 1px solid var(--border-color);
 }
 
@@ -380,8 +396,9 @@ nav {
 
 .icon {
   width: 2.2rem;
-  transition: var(--transition);
   cursor: pointer;
+
+  transition: var(--transition);
 }
 
 .icon:hover {
@@ -389,7 +406,7 @@ nav {
 }
 
 /* =========================================
-   CARDS
+   CARD STYLES
 ========================================= */
 
 .details-container,
@@ -432,6 +449,7 @@ nav {
 .about-text {
   max-width: 900px;
   margin: 4rem auto 0;
+
   text-align: center;
 }
 
@@ -486,6 +504,7 @@ nav {
 
 .project-content {
   padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -496,8 +515,47 @@ nav {
   margin-bottom: 0.8rem;
 }
 
+/* =========================================
+   PROJECT DESCRIPTION + READ MORE
+========================================= */
+
 .project-description {
+  position: relative;
+
+  margin-bottom: 1rem;
+
+  line-height: 1.8;
+}
+
+.project-description.collapsed {
+  display: -webkit-box;
+
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.read-more-btn {
+  width: fit-content;
+
   margin-bottom: 1.5rem;
+
+  background: none;
+  border: none;
+
+  color: var(--accent-color);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.read-more-btn:hover {
+  opacity: 0.8;
 }
 
 /* =========================================
@@ -531,6 +589,7 @@ nav {
 .project-buttons {
   display: flex;
   gap: 1rem;
+
   margin-top: auto;
 }
 
@@ -540,8 +599,10 @@ nav {
 
 .image-slider {
   position: relative;
+
   width: 100%;
   height: 240px;
+
   overflow: hidden;
 }
 
@@ -568,8 +629,8 @@ nav {
 
   transform: translateY(-50%);
 
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
 
   border: none;
   border-radius: 50%;
@@ -578,6 +639,12 @@ nav {
   color: white;
 
   cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.image-slider button:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .prev {
@@ -615,8 +682,11 @@ nav {
 
 footer {
   padding: 2rem;
+
   text-align: center;
+
   background: white;
+
   margin-top: 4rem;
 }
 
@@ -632,18 +702,21 @@ footer {
 
   #hamburger-nav {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    width: 100%;
   }
 
   #profile {
     flex-direction: column;
+
     text-align: center;
 
     gap: 4rem;
 
     min-height: auto;
+
     padding-top: 9rem;
   }
 
@@ -703,11 +776,11 @@ footer {
   }
 
   .section__text h1 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
   }
 
   .section__text__p2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .section__pic-container {

@@ -76,3 +76,35 @@ function changeSlide(button, step) {
 
   slides[index].classList.add("active");
 }
+/* =========================
+   READ MORE FUNCTIONALITY
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const descriptions = document.querySelectorAll(".project-description");
+
+  descriptions.forEach((desc) => {
+    const fullText = desc.textContent.trim();
+
+    // Only apply if text is longer than 200 chars
+    if (fullText.length > 200) {
+      desc.classList.add("collapsed");
+
+      const button = document.createElement("button");
+      button.classList.add("read-more-btn");
+      button.textContent = "Read More";
+
+      desc.after(button);
+
+      button.addEventListener("click", () => {
+        desc.classList.toggle("collapsed");
+
+        if (desc.classList.contains("collapsed")) {
+          button.textContent = "Read More";
+        } else {
+          button.textContent = "Read Less";
+        }
+      });
+    }
+  });
+});
