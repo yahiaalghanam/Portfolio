@@ -38,23 +38,28 @@
   --radius-lg: 2rem;
 
   --transition: all 0.3s ease;
+
+  --container-width: 1200px;
 }
 
 /* =========================================
    GLOBAL
 ========================================= */
 
-html,
-body {
-  overflow-x: hidden;
+html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background: var(--background-color);
   color: var(--primary-color);
+
   line-height: 1.7;
+
+  overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -76,6 +81,12 @@ ul {
   list-style: none;
 }
 
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
 p {
   color: var(--secondary-color);
 }
@@ -83,17 +94,46 @@ p {
 .title {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
+
   text-align: center;
+
   margin-bottom: 1rem;
+
+  line-height: 1.2;
 }
 
 .section__text__p1 {
   text-align: center;
+
   color: var(--accent-color);
+
   text-transform: uppercase;
   letter-spacing: 2px;
+
   font-weight: 600;
-  margin-bottom: 0.5rem;
+
+  margin-bottom: 0.6rem;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 /* =========================================
@@ -120,22 +160,28 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   z-index: 1000;
+
   box-shadow: var(--shadow-sm);
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
+
+  color: var(--primary-color);
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
 .nav-links a {
   position: relative;
+
   font-weight: 500;
+
   transition: var(--transition);
 }
 
@@ -192,6 +238,7 @@ nav {
   height: 3px;
 
   border-radius: 999px;
+
   background: var(--primary-color);
 
   transition: var(--transition);
@@ -211,7 +258,7 @@ nav {
 
 .menu-links {
   position: absolute;
-  top: 50px;
+  top: 55px;
   right: 0;
 
   width: 230px;
@@ -234,9 +281,11 @@ nav {
 
 .menu-links a {
   display: block;
+
   padding: 1rem;
 
   text-align: center;
+
   transition: var(--transition);
 }
 
@@ -320,17 +369,21 @@ nav {
 
 .section__text {
   max-width: 650px;
+
   text-align: center;
 }
 
 .section__text h1 {
   font-size: clamp(2.8rem, 6vw, 5rem);
+
   line-height: 1.1;
+
   margin-bottom: 1rem;
 }
 
 .section__text__p2 {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
+
   margin-bottom: 1.5rem;
 }
 
@@ -341,18 +394,24 @@ nav {
 .btn-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+
   flex-wrap: wrap;
+
+  gap: 1rem;
 }
 
 .btn {
-  min-height: 50px;
+  min-height: 52px;
+
   padding: 1rem 2rem;
 
   border: none;
   border-radius: 999px;
 
   font-weight: 600;
+  font-size: 0.95rem;
+
   cursor: pointer;
 
   transition: var(--transition);
@@ -392,6 +451,8 @@ nav {
 #socials-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+
   gap: 1.5rem;
 
   margin-top: 2rem;
@@ -399,6 +460,7 @@ nav {
 
 .icon {
   width: 2.2rem;
+
   cursor: pointer;
 
   transition: var(--transition);
@@ -438,20 +500,26 @@ nav {
 
 .about-containers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
 
   gap: 2rem;
+
   margin-top: 4rem;
 }
 
 .details-container {
   padding: 2rem;
+
   text-align: center;
 }
 
 .about-text {
   max-width: 900px;
+
   margin: 4rem auto 0;
+
   text-align: center;
 }
 
@@ -461,14 +529,18 @@ nav {
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
 
   gap: 2rem;
+
   margin-top: 4rem;
 }
 
 .skill-card {
   padding: 2rem;
+
   text-align: center;
 }
 
@@ -483,6 +555,7 @@ nav {
     repeat(auto-fit, minmax(min(340px, 100%), 1fr));
 
   gap: 2rem;
+
   margin-top: 4rem;
 }
 
@@ -516,26 +589,28 @@ nav {
 
   display: flex;
   flex-direction: column;
+
   flex-grow: 1;
 }
 
 .project-content h3 {
   font-size: 1.4rem;
+
   margin-bottom: 0.8rem;
+
+  line-height: 1.4;
 }
 
 /* =========================================
-   PROJECT DESCRIPTION + READ MORE
+   PROJECT DESCRIPTION
 ========================================= */
 
 .project-description {
-  position: relative;
-
   margin-bottom: 1rem;
 
   line-height: 1.8;
 
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .project-description.collapsed {
@@ -576,6 +651,7 @@ nav {
 .project-tools {
   display: flex;
   flex-wrap: wrap;
+
   gap: 0.7rem;
 
   margin-bottom: 1.5rem;
@@ -599,6 +675,7 @@ nav {
 
 .project-buttons {
   display: flex;
+
   gap: 1rem;
 
   margin-top: auto;
@@ -673,9 +750,11 @@ nav {
 .contact-container {
   display: flex;
   justify-content: center;
+
   flex-wrap: wrap;
 
   gap: 2rem;
+
   margin-top: 4rem;
 }
 
@@ -692,16 +771,21 @@ nav {
 ========================================= */
 
 footer {
-  padding: 2rem;
   margin-top: 4rem;
+
+  padding: 2rem;
 
   text-align: center;
 
   background: white;
 }
 
+footer p {
+  font-size: 0.95rem;
+}
+
 /* =========================================
-   RESPONSIVE DESIGN
+   TABLET
 ========================================= */
 
 @media screen and (max-width: 992px) {
@@ -718,6 +802,10 @@ footer {
     width: 100%;
   }
 
+  section {
+    padding: 6rem 7%;
+  }
+
   #profile {
     flex-direction: column;
 
@@ -730,32 +818,67 @@ footer {
     padding-top: 9rem;
   }
 
-  section {
-    padding: 6rem 7%;
-  }
-
   .section__pic-container {
     width: min(340px, 80vw);
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-  .title {
-    font-size: 2.4rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-container {
-    grid-template-columns:
-      repeat(auto-fit, minmax(170px, 1fr));
   }
 
   .project-buttons,
   .btn-container {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+  section {
+    padding: 5.5rem 6%;
+  }
+
+  nav {
+    height: 78px;
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .menu-links {
+    width: 210px;
+  }
+
+  .title {
+    font-size: 2.3rem;
+    line-height: 1.25;
+  }
+
+  .section__text__p1 {
+    font-size: 0.8rem;
+  }
+
+  #profile {
+    gap: 3rem;
+    padding-top: 7.5rem;
+  }
+
+  .section__pic-container {
+    width: min(280px, 85vw);
+  }
+
+  .section__text h1 {
+    font-size: 2.6rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+
+  .btn-container,
+  .project-buttons {
     flex-direction: column;
   }
 
@@ -763,55 +886,128 @@ footer {
     width: 100%;
   }
 
-  .section__pic-container {
-    width: min(280px, 85vw);
+  .skills-container,
+  .projects-grid,
+  .about-containers {
+    grid-template-columns: 1fr;
   }
 
-  .project-buttons {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-
-  section {
-    padding: 5rem 5%;
-  }
-
-  nav {
-    padding: 0 5%;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .section__text h1 {
-    font-size: 2.5rem;
-  }
-
-  .section__text__p2 {
-    font-size: 1.05rem;
-  }
-
-  .section__pic-container {
-    width: min(230px, 90vw);
-  }
-
-  .project-content h3 {
-    font-size: 1.2rem;
+  .project-tools {
+    justify-content: center;
   }
 
   .contact-card {
     width: 100%;
     justify-content: center;
   }
+}
 
-  .project-tools {
-    justify-content: center;
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+  section {
+    padding: 4.5rem 6%;
+  }
+
+  nav {
+    height: 74px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+
+  .menu-links {
+    width: 190px;
+    right: -5px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .section__text__p1 {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  #profile {
+    gap: 2.5rem;
+    padding-top: 7rem;
+  }
+
+  .section__pic-container {
+    width: min(220px, 88vw);
+  }
+
+  .section__text h1 {
+    font-size: 2.2rem;
+  }
+
+  .section__text__p2 {
+    font-size: 0.95rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+  }
+
+  .btn {
+    min-height: 48px;
+
+    padding: 0.9rem 1.4rem;
+
+    font-size: 0.92rem;
+  }
+
+  .project-img,
+  .image-slider {
+    height: 210px;
+  }
+
+  .project-content {
+    padding: 1.2rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-tools span {
+    font-size: 0.72rem;
+  }
+
+  .image-slider button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact-container {
+    gap: 1rem;
+  }
+
+  .contact-card {
+    padding: 1rem 1.2rem;
+
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 3rem;
+
+    padding: 1.5rem 6%;
+  }
+
+  footer p {
+    font-size: 0.82rem;
+    line-height: 1.6;
   }
 }
