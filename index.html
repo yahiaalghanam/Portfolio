@@ -1,640 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================
-       META DATA
-  ========================== -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yahia Alghanam | Data & Analytics Engineer</title>
 
-  <!-- =========================
-       GOOGLE FONT
-  ========================== -->
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- =========================
-       CSS FILES
-  ========================== -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
 
-  <!-- =========================
-       DESKTOP NAVBAR
-  ========================== -->
+  <!-- ===================== DESKTOP NAV ===================== -->
   <nav id="desktop-nav">
-
-    <div class="logo">
-      Yahia Alghanam
-    </div>
-
+    <div class="logo">YA<span class="logo-dot">.</span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
   </nav>
 
-  <!-- =========================
-       MOBILE NAVBAR
-  ========================== -->
+  <!-- ===================== MOBILE NAV ===================== -->
   <nav id="hamburger-nav">
-
-    <div class="logo">
-      Yahia Alghanam
-    </div>
-
+    <div class="logo">YA<span class="logo-dot">.</span></div>
     <div class="hamburger-menu">
-
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
       <ul class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </ul>
-
     </div>
   </nav>
 
-  <!-- =========================
-       HERO SECTION
-  ========================== -->
+  <!-- ===================== HERO ===================== -->
   <section id="profile">
 
+    <div class="hero-bg-shape"></div>
+
     <div class="section__pic-container">
-
-      <img
-        src="./assets/fff.png"
-        alt="Yahia Alghanam Profile Picture"
-      />
-
+      <div class="pic-ring"></div>
+      <img src="./assets/fff.png" alt="Yahia Alghanam Profile Picture" />
     </div>
 
     <div class="section__text">
-
-      <p class="section__text__p1">
-        Hello, I'm
-      </p>
-
-      <h1 class="title">
-        Yahia Alghanam
-      </h1>
-
-      <p class="section__text__p2">
-        Data & Analytics Engineer
-      </p>
+      <p class="greeting">Hello, I'm</p>
+      <h1 class="hero-name">Yahia<br><em>Alghanam</em></h1>
+      <p class="hero-role">Data &amp; Analytics Engineer</p>
 
       <div class="btn-container">
-
-        <button
-          class="btn btn-color-2"
-          onclick="window.open('./assets/Yahia Alghanam - Data Analyst.pdf')"
-        >
-          View Resume
+        <button class="btn btn-outline" onclick="window.open('./assets/Yahia Alghanam - Data Analyst.pdf')">
+          <span>View Resume</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </button>
-
-        <button
-          class="btn btn-color-1"
-          onclick="location.href='./#contact'"
-        >
-          Contact Me
+        <button class="btn btn-solid" onclick="location.href='./#contact'">
+          <span>Contact Me</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-
       </div>
 
-      <!-- SOCIALS -->
       <div id="socials-container">
-
-        <img
-          src="./assets/linkedin.png"
-          alt="LinkedIn"
-          class="icon"
-          onclick="window.open('https://www.linkedin.com/in/yahia-alghanam/')"
-        />
-
-        <img
-          src="./assets/github.png"
-          alt="GitHub"
-          class="icon"
-          onclick="window.open('https://github.com/yahiaalghanam')"
-        />
-
-        <img
-          src="./assets/whatsapp_icon.png"
-          alt="WhatsApp"
-          class="icon"
-          onclick="window.open('https://wa.me/201155654725')"
-        />
-
+        <a href="https://www.linkedin.com/in/yahia-alghanam/" target="_blank" class="social-link" aria-label="LinkedIn">
+          <img src="./assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/yahiaalghanam" target="_blank" class="social-link" aria-label="GitHub">
+          <img src="./assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://wa.me/201155654725" target="_blank" class="social-link" aria-label="WhatsApp">
+          <img src="./assets/whatsapp_icon.png" alt="WhatsApp" />
+        </a>
       </div>
-
     </div>
 
   </section>
 
-  <!-- =========================
-       ABOUT SECTION
-  ========================== -->
+  <!-- ===================== ABOUT ===================== -->
   <section id="about">
-
-    <p class="section__text__p1">
-      Get To Know More
-    </p>
-
-    <h1 class="title">
-      About Me
-    </h1>
+    <p class="section__text__p1">Get To Know More</p>
+    <h2 class="title">About Me</h2>
 
     <div class="about-containers">
 
-      <!-- EXPERIENCE -->
       <div class="details-container">
-
-        <img
-          src="./assets/experience.png"
-          alt="Experience"
-          class="icon"
-        />
-
+        <div class="details-icon-wrap">
+          <img src="./assets/experience.png" alt="" class="icon" />
+        </div>
         <h3>Experience</h3>
-
-        <p>
-          +3 Years of Experience
-        </p>
-
+        <p>+3 Years</p>
       </div>
 
-      <!-- EDUCATION -->
       <div class="details-container">
-
-        <img
-          src="./assets/education.png"
-          alt="Education"
-          class="icon"
-        />
-
+        <div class="details-icon-wrap">
+          <img src="./assets/education.png" alt="" class="icon" />
+        </div>
         <h3>Education</h3>
-
-        <p>
-          B.Sc. Computer Science
-        </p>
-
+        <p>B.Sc. Computer Science</p>
       </div>
 
-      <!-- CERTIFICATIONS -->
       <div class="details-container">
-
-        <img
-          src="./assets/certificate_16399511.png"
-          alt="Certifications"
-          class="icon"
-        />
-
+        <div class="details-icon-wrap">
+          <img src="./assets/certificate_16399511.png" alt="" class="icon" />
+        </div>
         <h3>Certifications</h3>
-
         <p>
-          <a
-            href="https://drive.google.com/drive/folders/1gtTLRTnIBrkk09tkpPsFNc7FBwwuk536"
-            target="_blank"
-          >
-            View Certificates
+          <a href="https://drive.google.com/drive/folders/1gtTLRTnIBrkk09tkpPsFNc7FBwwuk536" target="_blank" class="cert-link">
+            View Certificates ↗
           </a>
         </p>
-
       </div>
 
     </div>
 
-    <!-- ABOUT TEXT -->
     <div class="about-text">
-
-      <p>
-        Detail-oriented Data Analyst and Analytics Engineer with strong
-        expertise in SQL, Power BI, Python, ETL pipelines, and business
-        intelligence solutions.
-      </p>
-
-      <p>
-        Experienced in data cleaning, data visualization, dashboard
-        development, and extracting actionable insights to support
-        strategic business decisions.
-      </p>
-
-      <p>
-        Passionate about transforming raw data into meaningful stories
-        that drive growth and operational efficiency.
-      </p>
-
+      <p>Detail-oriented Data Analyst and Analytics Engineer with strong expertise in SQL, Power BI, Python, ETL pipelines, and business intelligence solutions.</p>
+      <p>Experienced in data cleaning, data visualization, dashboard development, and extracting actionable insights to support strategic business decisions.</p>
+      <p>Passionate about transforming raw data into meaningful stories that drive growth and operational efficiency.</p>
     </div>
 
   </section>
 
-  <!-- =========================
-       SKILLS SECTION
-  ========================== -->
+  <!-- ===================== SKILLS ===================== -->
   <section id="experience">
-
-    <p class="section__text__p1">
-      Explore My
-    </p>
-
-    <h1 class="title">
-      Skills & Expertise
-    </h1>
+    <p class="section__text__p1">Explore My</p>
+    <h2 class="title">Skills &amp; Expertise</h2>
 
     <div class="skills-container">
 
-      <!-- SKILL -->
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level advanced">Advanced</div>
         <h3>SQL Server</h3>
-        <p>Advanced</p>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level advanced">Advanced</div>
         <h3>Python</h3>
-        <p>Advanced</p>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level advanced">Advanced</div>
         <h3>Power BI</h3>
-        <p>Advanced</p>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level advanced">Advanced</div>
         <h3>Excel</h3>
-        <p>Advanced</p>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
-        <h3>ETL</h3>
-        <p>Advanced</p>
+        <div class="skill-level advanced">Advanced</div>
+        <h3>ETL Pipelines</h3>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level intermediate">Intermediate</div>
         <h3>Machine Learning</h3>
-        <p>Intermediate</p>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level professional">Professional</div>
         <h3>Problem Solving</h3>
-        <p>Professional</p>
       </div>
 
       <div class="skill-card">
-        <img src="./assets/checkmark.png" alt="" class="icon" />
+        <div class="skill-level professional">Professional</div>
         <h3>Analytical Thinking</h3>
-        <p>Professional</p>
       </div>
 
     </div>
-
   </section>
 
-  <!-- =========================
-     PROJECTS SECTION
-========================= -->
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h2 class="title">Projects</h2>
 
-<section id="projects">
+    <div class="projects-grid">
 
-  <p class="section__text__p1">
-    Browse My Recent
-  </p>
-
-  <h1 class="title">
-    Projects
-  </h1>
-
-  <div class="projects-grid">
-
-
-        <!-- PROJECT CARD -->
-    <div class="project-card">
-
-<div class="image-slider">
-
-  <img src="./assets/Global Market Intelligence.png" class="slide active" alt="Dashboard 1">
-  <img src="./assets\DWH Archeticture.png" class="slide" alt="Dashboard 2">
-  <img src="./assets/gold before.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/gold after.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/Before USD.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/USD afte .png" class="slide" alt="Dashboard 3">
-  <img src="./assets/eur before.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/eur after.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/sar before.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/sar after.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/inflation before.png" class="slide" alt="Dashboard 3">
-  <img src="./assets/inflation after.png" class="slide" alt="Dashboard 3">
-
-
-  <button class="prev" onclick="changeSlide(this, -1)">‹</button>
-  <button class="next" onclick="changeSlide(this, 1)">›</button>
-
-</div>
-
-      <div class="project-content">
-
-        <h3>
-          Global Market Intelligence Dashboard
-        </h3>
-
-        <p class="project-description">
-            Built a high-performance macroeconomic analytics system delivering real-time insights into gold and currency market behavior for enterprise decision-making. Developed an end-to-end SQL Server pipeline using Medallion Architecture to transform raw financial data (Gold, USD, EUR, SAR) into a structured analytical layer. Implemented stored procedures to analyze volatility, inflation shocks, and currency trends, and designed an interactive Power BI dashboard with custom navigation. Optimized queries for efficient reporting and historical analysis for the International Steel Agency.       </p>
-
-        <!-- TECH STACK -->
-        <div class="project-tools">
-          <span>Power BI</span>
-          <span>SQL Server</span>
-          <span>Python</span>
-          <span>Medallion Architecture</span>
+      <!-- PROJECT 1: Global Market -->
+      <div class="project-card">
+        <div class="image-slider">
+          <img src="./assets/DASH.png" class="slide active" alt="Global Market Dashboard" />
+          <img src="./assets/DWH Archeticture.png" class="slide" alt="DWH Architecture" />
+          <img src="./assets/gold before.png" class="slide" alt="Gold Before" />
+          <img src="./assets/gold after.png" class="slide" alt="Gold After" />
+          <img src="./assets/Before USD.png" class="slide" alt="Before USD" />
+          <img src="./assets/USD afte .png" class="slide" alt="After USD" />
+          <img src="./assets/eur before.png" class="slide" alt="EUR Before" />
+          <img src="./assets/eur after.png" class="slide" alt="EUR After" />
+          <img src="./assets/sar before.png" class="slide" alt="SAR Before" />
+          <img src="./assets/sar after.png" class="slide" alt="SAR After" />
+          <img src="./assets/inflation before.png" class="slide" alt="Inflation Before" />
+          <img src="./assets/inflation after.png" class="slide" alt="Inflation After" />
+          <button class="prev" onclick="changeSlide(this, -1)" aria-label="Previous">&#8249;</button>
+          <button class="next" onclick="changeSlide(this, 1)" aria-label="Next">&#8250;</button>
+          <div class="slide-dots" id="dots-0"></div>
         </div>
-
-        <div class="project-buttons">
-
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://github.com/yahiaalghanam/Global-Market-Intelligence')"
-          >
-            GitHub
-          </button>
-
+        <div class="project-content">
+          <h3>Global Market Intelligence Dashboard</h3>
+          <p class="project-description">Built a high-performance macroeconomic analytics system delivering real-time insights into gold and currency market behavior for enterprise decision-making. Developed an end-to-end SQL Server pipeline using Medallion Architecture to transform raw financial data (Gold, USD, EUR, SAR) into a structured analytical layer. Implemented stored procedures to analyze volatility, inflation shocks, and currency trends.</p>
+          <div class="project-tools">
+            <span>Power BI</span>
+            <span>SQL Server</span>
+            <span>Python</span>
+            <span>Data Warehousing</span>
+            <span>APIs</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/Global-Market-Intelligence')">
+              GitHub ↗
+            </button>
+          </div>
         </div>
+      </div>
 
+      <!-- PROJECT 2: Food & Drinks -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/rest_dash.png" alt="Restaurant Dashboard" class="project-img" />
+        </div>
+        <div class="project-content">
+          <h3>Food &amp; Drinks Sales Analysis Dashboard</h3>
+          <p class="project-description">Developed an interactive Food &amp; Drinks Sales Analysis Dashboard in Power BI delivering real-time insights into business performance and revenue trends. Built a solution tracking key KPIs including total revenue, orders, and average order value. Designed analysis across time, categories, channels, and salespersons. Implemented dynamic filtering and drill-down to explore customer behavior.</p>
+          <div class="project-tools">
+            <span>SQL Server</span>
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>Power Query</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/Resturant_Sales_dashboard-')">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Red Bull -->
+      <div class="project-card">
+        <div class="image-slider">
+          <img src="./assets/Redbull Sales Analysis (1).png" class="slide active" alt="Red Bull Dashboard" />
+          <img src="./assets/image.png" class="slide" alt="Red Bull Analysis" />
+          <button class="prev" onclick="changeSlide(this, -1)" aria-label="Previous">&#8249;</button>
+          <button class="next" onclick="changeSlide(this, 1)" aria-label="Next">&#8250;</button>
+          <div class="slide-dots" id="dots-2"></div>
+        </div>
+        <div class="project-content">
+          <h3>Red Bull Sales Analysis Dashboard</h3>
+          <p class="project-description">Red Bull Sales Analysis is an end-to-end data analytics project focused on transforming raw sales data into actionable business insights. It explores revenue trends, product performance, and account-level contributions across different customer segments. Includes data cleaning, modeling, KPI development, and exploratory analysis to identify growth patterns and key revenue drivers.</p>
+          <div class="project-tools">
+            <span>Power BI</span>
+            <span>SQL Server</span>
+            <span>Excel</span>
+            <span>Data Visualization</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/Red-Bull-Sales-Analysis')">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: Walmart -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/Walmart Dashboard.png" alt="Walmart Dashboard" class="project-img" />
+        </div>
+        <div class="project-content">
+          <h3>Walmart Analysis Dashboard</h3>
+          <p class="project-description">Walmart Data Cleaning, Exploration &amp; Analysis is an end-to-end data analytics project focused on transforming raw retail data into actionable insights. It includes data cleaning, preprocessing, and exploratory data analysis to uncover sales trends, customer behavior, and performance patterns.</p>
+          <div class="project-tools">
+            <span>SQL</span>
+            <span>Power BI</span>
+            <span>Data Cleaning</span>
+            <span>Analytics</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/Walmart-Data-Cleaning-Exploration-and-Analysis-')">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5: Layoffs -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/lay.jpg" alt="Layoffs Data" class="project-img" />
+        </div>
+        <div class="project-content">
+          <h3>SQL Operations on Layoffs Data</h3>
+          <p class="project-description">SQL Operations on Layoffs Data is a data cleaning and exploratory analysis project focused on global layoff trends. It applies advanced SQL techniques including CTEs, window functions, and data standardization to remove duplicates, handle missing values, and structure data for analysis. Uncovers insights on layoffs by company, industry, and geography.</p>
+          <div class="project-tools">
+            <span>SQL</span>
+            <span>Exploratory Data Analysis</span>
+            <span>Data Cleaning</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/SQL-Operations-on-Layoffs-Data')">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6: COVID -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/19.jpg" alt="COVID-19 Analysis" class="project-img" />
+        </div>
+        <div class="project-content">
+          <h3>COVID-19 Data Exploration Using SQL</h3>
+          <p class="project-description">COVID-19 Data Exploration Project Using SQL is a data analysis project focused on understanding the global impact of the pandemic. Uses SQL for data cleaning, transformation, and exploratory analysis to examine infection rates, death rates, and vaccination progress across countries and continents. Applies advanced SQL techniques like joins, CTEs, and aggregations.</p>
+          <div class="project-tools">
+            <span>SQL</span>
+            <span>Exploratory Data Analysis</span>
+            <span>Data Cleaning</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/Covid-19-Data-Exploration-Project-Using-SQL')">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 7: Bike Sales -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/Bike Sales Dashboard.png" alt="Bike Sales Dashboard" class="project-img" />
+        </div>
+        <div class="project-content">
+          <h3>Bike Sales Dashboard</h3>
+          <p class="project-description">Designed a dynamic Excel dashboard to analyze customer demographics, purchasing patterns, and regional sales performance. Features pivot tables, dynamic charts, and interactive slicers for exploring sales data across multiple dimensions.</p>
+          <div class="project-tools">
+            <span>Excel</span>
+            <span>Pivot Tables</span>
+            <span>Dashboards</span>
+            <span>Data Analysis</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn btn-outline btn-sm" onclick="window.open('https://github.com/yahiaalghanam/Bike_sales_dashboard-')">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
       </div>
 
     </div>
+  </section>
 
-        <!-- PROJECT CARD -->
-    <div class="project-card">
-
-      <img
-        src="./assets/rest_dash.png"
-        alt="restaurant dashboard"
-        class="project-img"
-      />
-
-      <div class="project-content">
-
-        <h3>
-          Food & Drinks Sales Analysis Dashboard
-        </h3>
-
-        <p class="project-description">
-Developed an interactive Food & Drinks Sales Analysis Dashboard in Power BI delivering real-time insights into business performance and revenue trends. Built a solution tracking key KPIs including total revenue, orders, and average order value, enabling clear business monitoring. Designed analysis across time, categories, channels, and salespersons. Implemented dynamic filtering and drill-down to explore customer behavior. Optimized performance for fast reporting and highlighted top and underperforming products to support data-driven decision-making.        <div class="project-tools">
-          <span>SQL Server</span>
-          <span>Power BI</span>
-          <span>Excel</span>
-          <span>Power Query</span>
-        </div>
-
-        <div class="project-buttons">
-
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://github.com/yahiaalghanam/Resturant_Sales_dashboard-')"
-          >
-            GitHub
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    
-    <!-- PROJECT CARD -->
-    <div class="project-card">
-
-<div class="image-slider">
-
-  <img src="./assets/Redbull Sales Analysis (1).png" class="slide active" alt="Dashboard 1">
-  <button class="prev" onclick="changeSlide(this, -1)">‹</button>
-  <button class="next" onclick="changeSlide(this, 1)">›</button>
-
-</div>
-
-      <div class="project-content">
-
-        <h3>
-          Red Bull Sales Analysis Dashboard
-        </h3>
-
-        <p class="project-description">
-Red Bull Sales Analysis project focused on exploring and analyzing multi-year sales data to uncover key trends, growth patterns, and account performance insights. Built using SQL, Excel, and Power BI, the project includes data cleaning, transformation, and visualization to track sales performance across different account types and identify top and low-performing segments for better business decision-making.
-        </p>
-
-        <!-- TECH STACK -->
-        <div class="project-tools">
-          <span>Power BI</span>
-          <span>SQL Server</span>
-          <span>Excel</span>
-          <span>Data Visualization</span>
-        </div>
-
-        <div class="project-buttons">
-
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://github.com/yahiaalghanam/Red-Bull-Sales-Analysis')"
-          >
-            GitHub
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROJECT CARD -->
-    <div class="project-card">
-
-      <img
-        src="./assets/Walmart Dashboard.png"
-        alt="Walmart Dashboard"
-        class="project-img"
-      />
-
-      <div class="project-content">
-
-        <h3>
-          Walmart Analysis Dashboard
-        </h3>
-
-        <p class="project-description">
-          Performed data cleaning, exploration, and sales analysis to uncover
-          customer purchasing insights and improve business reporting accuracy.
-        </p>
-
-        <div class="project-tools">
-          <span>SQL</span>
-          <span>Power BI</span>
-          <span>Data Cleaning</span>
-          <span>Analytics</span>
-        </div>
-
-        <div class="project-buttons">
-
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://github.com/yahiaalghanam/Walmart-Data-Cleaning-Exploration-and-Analysis-')"
-          >
-            GitHub
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROJECT CARD -->
-    <div class="project-card">
-
-      <img
-        src="./assets/Bike Sales Dashboard.png"
-        alt="Bike Sales Dashboard"
-        class="project-img"
-      />
-
-      <div class="project-content">
-
-        <h3>
-          Bike Sales Dashboard
-        </h3>
-
-        <p class="project-description">
-          Designed a dynamic Excel dashboard to analyze customer demographics,
-          purchasing patterns, and regional sales performance.
-        </p>
-
-        <div class="project-tools">
-          <span>Excel</span>
-          <span>Pivot Tables</span>
-          <span>Dashboards</span>
-          <span>Data Analysis</span>
-        </div>
-
-        <div class="project-buttons">
-
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://github.com/yahiaalghanam/Bike_sales_dashboard-')"
-          >
-            GitHub
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- =========================
-       CONTACT SECTION
-  ========================== -->
+  <!-- ===================== CONTACT ===================== -->
   <section id="contact">
-
-    <p class="section__text__p1">
-      Get In Touch
-    </p>
-
-    <h1 class="title">
-      Contact Me
-    </h1>
+    <p class="section__text__p1">Get In Touch</p>
+    <h2 class="title">Contact Me</h2>
 
     <div class="contact-container">
 
-      <div class="contact-card">
+      <a href="mailto:yahiaelghanam99@gmail.com" class="contact-card">
+        <div class="contact-icon-wrap">
+          <img src="./assets/email.png" alt="" class="icon" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">yahiaelghanam99@gmail.com</span>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
 
-        <img
-          src="./assets/email.png"
-          alt="Email"
-          class="icon"
-        />
-
-        <a href="mailto:yahiaelghanam99@gmail.com">
-          yahiaelghanam99@gmail.com
-        </a>
-
-      </div>
-
-      <div class="contact-card">
-
-        <img
-          src="./assets/linkedin.png"
-          alt="LinkedIn"
-          class="icon"
-        />
-
-        <a
-          href="https://www.linkedin.com/in/yahia-alghanam/"
-          target="_blank"
-        >
-          LinkedIn Profile
-        </a>
-
-      </div>
+      <a href="https://www.linkedin.com/in/yahia-alghanam/" target="_blank" class="contact-card">
+        <div class="contact-icon-wrap">
+          <img src="./assets/linkedin.png" alt="" class="icon" />
+        </div>
+        <div class="contact-info">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">LinkedIn Profile</span>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
 
     </div>
-
   </section>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-
-    <p>
-      © 2026 Yahia Alghanam. All Rights Reserved.
-    </p>
-
+    <div class="footer-inner">
+      <span class="footer-logo">YA<span class="logo-dot">.</span></span>
+      <p>© 2026 Yahia Alghanam. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
   <script src="script.js"></script>
 
 </body>
